@@ -40,8 +40,27 @@ def gugudan(num):
 
 gugudan(2)
 gugudan(3)'''
+'''def print_num(k):
+    if k == 1:
+        return False
+    k_root = round(k**0.5)+1
+    for i in range(2,k_root):
+        if not(k%i):
+            return False
+    return True
+num = int(input())
+if print_num(num):
+    print("소수입니다.")
+else:
+    print("소수가 아닙니다.")'''
 
-
+A,B = map(int, input().split())
+def max_ke7(A,B):  #인수 두개
+    if A>B:
+        print("{}가 {}보다 큽니다.".format(A,B))
+    else:
+        print("{}가 {}보다 큽니다.".format(B,A))
+max_ke7(A,B)
 
 
 
