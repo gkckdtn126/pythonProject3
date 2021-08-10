@@ -24,6 +24,25 @@ a=func3() #아무 변화가 없다.
 print(a)
 #함수 안에 abcsde가 있다. 내부로 값을 받아오긴 함 a 안에 abcsde가 들어가있다.'''
 
+'''def func4(a,b): #함수 생성하는데 2개의 값을 받을 수 있다.
+    return a*b #a와 b를 곱해서 함수를 호출 한 곳으로 그 값을 돌려보낸다. 내부에서만 쓰고 외부로 보낼라면 return을 쓰고 외부로 보낸다
+c = func4(10,20)
+print(c)'''
+
+'''for i in range(1,10):
+    print(f'{2} x {i} = {2*i}')
+for i in range(1,10):
+    print(f'{3} x {i} = {3*i}')  #함수 사용 안할때
+
+def gugudan(num):
+    for i in range(1,10):
+        print(f'{num} x {i} = {num*i}')
+
+gugudan(2)
+gugudan(3)'''
+
+
+
 
 
 
