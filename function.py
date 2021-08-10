@@ -54,13 +54,52 @@ if print_num(num):
 else:
     print("소수가 아닙니다.")'''
 
-A,B = map(int, input().split())
+'''A,B = map(int, input().split())
 def max_ke7(A,B):  #인수 두개
     if A>B:
         print("{}가 {}보다 큽니다.".format(A,B))
     else:
         print("{}가 {}보다 큽니다.".format(B,A))
-max_ke7(A,B)
+max_ke7(A,B)'''
+
+''''#def abc(a,b,c,d = 10) #디폴트값 그냥 정해진 값이다. 디폴트 매개변수
+def print_n_time(value, n = 2):
+    for i in range(n):
+        print(value)
+print_n_time("안녕하세요") #디폴트로 생성된 값이 있어서 두번째꺼 안쳐도 된다. n =2 뒤에 (value, n = 2, c)이렇게 안된다. c를 넣으려면
+#디폴트 매개변수 앞으로 가야한다. (value, c, n=2)이렇게 해야한다. 
+
+def print_n_time(value, b = 5, n = 10):
+    return value+b+n
+print_n_time(1,2,3) #1+2+3
+print_n_time(1,2) #1+2+10
+print_n_time(1) #1+5+10'''
+
+'''#가변 매개변수
+#def 함수 이름(*n): #9개 매개변수 n개 매개 변수 앞에 별표를 해서 n개의 매개변수가 되도록 해준다.
+def print_n_time(n,*values): #가변 매개변수는 무조건 뒤에 와야된다. 규칙1.가변 매개변수 뒤에는 일반 매개변수가 올수없다.
+    #2. 가변매개변수는 하나만 사용할 수 있다.
+    for i in range(n):
+        for value in values:
+            print(value)
+        print()
+print_n_time(3,"안녕하세요","반갑","ㅂㅂ")'''
+
+'''def print_n_time(*value):
+    print(max(*value))
+
+print(print_n_time(1,2,3,4,5,8,30))'''
+
+'''def print_n_time(*values, n = 2):
+    for i in range(n):
+        for value in values:
+            print(value)
+        print()
+        
+print_n_time(3,"안녕하세요","반갑습니다","ㅂㅂ", n = 3) #그냥 3 적으면 안들어가고 n = 3으로 키워드 값으로 넣어준다.'''
+
+
+
 
 
 
