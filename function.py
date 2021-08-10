@@ -98,10 +98,88 @@ print(print_n_time(1,2,3,4,5,8,30))'''
         
 print_n_time(3,"안녕하세요","반갑습니다","ㅂㅂ", n = 3) #그냥 3 적으면 안들어가고 n = 3으로 키워드 값으로 넣어준다.'''
 
+'''def sum_all(start, end):
+    output = 0
+    for i in range(start, end+1):
+        output += i
+    return output
+
+print("0부터 100까지", sum_all(0,100))
+
+
+def sum_all(start = 0, end = 100, step = 1):
+    output = 0
+    for i in range(start, end+1,step):
+        output += i
+    return output
+
+print("0부터 100까지", sum_all(0,100,2))'''
+
+#재귀: 나 자신을 호출하는 무한루프, 팩토리얼
+def factorial(n):
+    output = 1
+    for i in range(1,n+1):
+        output *= i
+    return output
+print("1! :", factorial(1))
+print("3! :" ,factorial(3))
+print("5! :", factorial(5))
+print("9! :" ,factorial(9))
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n*factorial(n-1) #재귀 적인 함수  0이 될때까지 반복한다.
+
+print("5!: ", factorial(5))
+
+'''
+1. 암 수
+2. 두달 이상된 토끼는 번식할 수 있다. 
+3. 토끼는 죽지 않는다. 
+4. 번식한 토끼는 매달 새끼를 한쌍식 낳는다. 
+'''
+'''def fibo(n):
+    if n ==1:
+        return 1
+    if n ==2:
+        return 1
+    else:
+        return fibo(n-1)+fibo(n-2)
+
+print("피보나치", fibo(40)) #나 자신을 호출하고 계산하는데 연산 능력에 한계가 온다. '''
+
+'''counter = 0 #외부의 값 선언
+dictionary = {1:1,2:2} #딕셔너리 만들기
+def fibo(n):
+    print("피보나치 ({})를 구합니다.".format(n))
+    global counter
+    #파이썬은 함수 내부에서 함수 외부에 있는 변수를 참조하지 못한다.
+    #함수 내부에서 함수 외부에 있는 변수라는 것을 설명하려면 global키워드가 필요하다.
+    counter += 1
+    if n ==1:
+        return 1
+    if n ==2:
+        return 1
+    else:
+        return fibo(n-1)+fibo(n-2)
+
+fibo(10)
+print("피보나치 10에 계산된 값은 {}입니다.".format(counter))'''
 
 
 
+counter = 0 #외부의 값 선언
+dictionary = {1:1,2:2} #딕셔너리 만들기
+def fibo(n):
+    if n in dictionary:
+        return dictionary[n]
+    else:
+        output = fibo(n-1)+fibo(n-2)
+        dictionary[n] = output
+        return output #메모한다
 
-
+print("피보 : ", fibo(40))
 
 
