@@ -432,7 +432,11 @@ time.sleep(10) #시스템이 10초동안 멈춘다.'''
 from urllib import request
 target = request.urlopen("http://google.com")
 output = target.read()
-print(output)
+file = open("output.png","wb")  #바이너리 파일을 쓰겠다. rb:읽겠다.
+file.write(output)
+file.close()
+
+
 
 
 
