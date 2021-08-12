@@ -115,7 +115,7 @@ def sum_all(start = 0, end = 100, step = 1):
 
 print("0부터 100까지", sum_all(0,100,2))'''
 
-#재귀: 나 자신을 호출하는 무한루프, 팩토리얼
+'''#재귀: 나 자신을 호출하는 무한루프, 팩토리얼
 def factorial(n):
     output = 1
     for i in range(1,n+1):
@@ -132,7 +132,7 @@ def factorial(n):
     else:
         return n*factorial(n-1) #재귀 적인 함수  0이 될때까지 반복한다.
 
-print("5!: ", factorial(5))
+print("5!: ", factorial(5))'''
 
 '''
 1. 암 수
@@ -170,7 +170,7 @@ print("피보나치 10에 계산된 값은 {}입니다.".format(counter))'''
 
 
 
-counter = 0 #외부의 값 선언
+'''counter = 0 #외부의 값 선언
 dictionary = {1:1,2:2} #딕셔너리 만들기
 def fibo(n):
     if n in dictionary:
@@ -181,5 +181,189 @@ def fibo(n):
         return output #메모한다
 
 print("피보 : ", fibo(40))
+
+
+
+counter = 0 #외부의 값 선언
+dictionary = {1:1,2:2} #딕셔너리 만들기
+def fibo(n):
+    if n in dictionary:
+        return dictionary[n] #조기 리턴 !!!!
+
+    output = fibo(n-1)+fibo(n-2)
+    dictionary[n] = output
+    return output #메모한다
+
+print("피보 : ", fibo(40))'''
+
+#예외처리
+#에러 처리
+
+'''try:
+    문장
+except
+    예외 처리:'''
+'''def calc(value):
+    sum = None
+    try:
+        sum = value[0]+value[1]+value[2]
+    except IndexError as err:
+        print("인덱스 에러")
+    except Exception as err:
+        print(str(err))
+    else:
+        print("에러 없음")
+    finally:
+        print(sum)
+calc([1,2])'''
+
+'''a = 10
+def ary():
+    global a
+    print(a)'''
+
+'''def list(k):
+    temp = set(k)
+    return list(temp)'''
+
+'''객체 = open(경로, 읽기 모드)
+r = 읽기
+w = 쓰기 
++r = 읽기 or 쓰기 모드 = 경로를 지정한 곳에 파일이 없다면 에러 
++w = 읽기 or 쓰기 = 파일이 없다면 생성 
+a = 추가 
+a+ = 읽기 + 추가 모드 
+close() 마지막엔 close 꼭 해주기'''
+
+'''file= open("basic.txt", "w")
+
+file.write("hello python")
+
+file.close()'''
+
+'''data = "파이썬 프로그래밍"
+with open("basic.txt", "w", encoding="utf-8") as f: #with 쓰면 클로즈 안써도 됨, 모든 명령어를 줄여서 f라고 하자:as를쓴다.
+    f.write(data)
+
+data = "파이썬 프로그래밍"
+with open("basic.txt", "w", encoding="utf-8") as f:  # with 쓰면 클로즈 안써도 됨, 모든 명령어를 줄여서 f라고 하자:as를쓴다.
+    f.write(data)
+    
+import os #
+print(os.getcwd())
+
+절대 경로
+C:/Users/Lenovo/PycharmProjects/4
+상대경로 
+4/data.txt'''  #하위폴더
+
+'''data = "파이썬"
+with open("C:/Users/Lenovo/PycharmProjects/4/ff/basic.txt", "w", encoding="utf-8") as f:  # with 쓰면 클로즈 안써도 됨, 모든 명령어를 줄여서 f라고 하자:as를쓴다.
+    f.write(data) #지금 function있는쪽이 내 위치이고 이걸 기준으로 함 상대경로는 '''
+'''f = open("basic.txt","r",encoding= "utf-8") #f에 객체로 저장하는거
+f.close()'''
+
+#예외처리 1. 프로그램 실행전에 발생하는 오류 2.프로그램 실행중에 발생하는경우, 파이썬은 try랑 if랑 같이 쓰는데 try가 느리고 if가 빨라서 if를 쓸때도 있다.
+#플라스크
+'''user_input_a = input("정수입력 :")
+if user_input_a.isdigit(): #숫자로만 구성된 글자인지 확인하는거, 실수는 isfloat()
+    number_input_a = int(user_input_a)
+    print("원의 반지름 :", number_input_a)
+    print("원의 울레 :", 2*3.14*number_input_a)
+else:
+    print("정수를 입력하지 않았습니다.")
+    #isalpha():오직 영어로만 구성된 문자인지, isalnum():'''
+
+
+'''user_input_a = input("정수입력 :")
+try: #오류를 방지하게 해준다. 에러나면 무시, 모든 것이 다 들어간다.
+    number_input_a = int(user_input_a)
+    print("원의 반지름 :", number_input_a)
+    print("원의 울레 :", 2*3.14*number_input_a)
+except:# 에러나면 실행 에러를 없애기 위해서 실행되는 거임
+    print("정수를 입력하지 않았습니다.")
+    #isalpha():오직 영어로만 구성된 문자인지, isalnum():
+else:
+    print("예외가 발생하지 않았습니다.")
+    #에러가 없을때 성공했을때 쓰는 코드
+finally:
+    print("끝났습니다.")
+    #무조건 실행하는것
+
+list_input_a = ["52","273","32","스파이","103"]
+list_number = []
+for item in list_input_a:
+    try:
+        float(item) #예외
+        list_number.append(item)
+    except:
+        pass
+print("{} 내부".format(list_input_a))
+print("{} 내부".format(list_number))'''
+
+'''try except
+try except+else
+try except+finally
+try except+else+finally
+try finally #이렇게 쓸 수 있다.'''
+
+
+'''try:
+    file = open("basic.txt", "w")
+    file.close()
+except Exception as e:
+    print(e)
+print("파일이 제대로 닫혀 있는지 확인")
+print("file.closed : ", file.closed)'''
+
+'''try:
+    number_input_a = int(input("정수입력: "))
+    print("반지름", number_input_a)
+    print("둘레", 2*3.14*number_input_a)
+except Exception as f:
+    print("type(exception) :", type(f) )
+    print("exception :", f)
+    #예외가 발생 했을 때 exception 클래스를 불러옴'''
+
+
+'''list_number = [15,212,31,2,3]
+try:
+    number_input_a = int(input("정수입력: "))
+    print("{}번째 요소 {}".format(number_input_a,list_number[number_input_a]))
+except ValueError:
+    print("정수를 입력하세요")
+except IndexError:
+    print("리스트의 인덱스를 벗어났습니다.")
+    #예외가 발생 했을 때 exception 클래스를 불러옴'''
+
+'''list_number = [15,212,31,2,3]
+try:
+    number_input_a = int(input("정수입력: "))
+    print("{}번째 요소 {}".format(number_input_a,list_number[number_input_a]))
+except ValueError as exception:
+    print("정수를 입력하세요")
+    print("exception: ",exception)
+except IndexError as exception:
+    print("리스트의 인덱스를 벗어났습니다.")
+    print("exception: ", exception)
+    #예외가 발생 했을 때 exception 클래스를 불러옴'''
+
+
+'''list_number = [15,212,31,2,3]
+try:
+    number_input_a = int(input("정수입력: "))
+    print("{}번째 요소 {}".format(number_input_a,list_number[number_input_a]))
+except ValueError as exception:
+    print("정수를 입력하세요")
+    print("exception: ",exception)
+except IndexError as exception:
+    print("리스트의 인덱스를 벗어났습니다.")
+    print("exception: ", exception)
+    #예외가 발생 했을 때 exception 클래스를 불러옴
+except Exception as exception:
+    print("그 외 모든 에러") #모든 에러를 예측할 수 있다. 
+    print("exception: ", exception)'''
+
+
 
 
