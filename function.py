@@ -364,6 +364,79 @@ except Exception as exception:
     print("그 외 모든 에러") #모든 에러를 예측할 수 있다. 
     print("exception: ", exception)'''
 
+'''def rsp(mine,yours):
+    allowed = ['가위','바위','보']
+    if mine not in allowed:
+        raise ValueError
+    #변수 관련 에러가 발생해도 그냥 넘겨라
+    if yours not in allowed:
+        raise ValueError
+try:
+    rsp('가위','바')
+except ValueError:
+    print("잘못된 값을 넣었습니다.(")'''
+
+#모듈
+'''import 모듈 이름 
+내부 모듈, 외부 모듈이 있다. 동작하는 방식에 따라서 프레임워크로 구분한다. 넘파이는 프레임 워크이다.
+코드가 라이브러리를 갔다가 컴퓨터로 오면 프레임 워크라고 한다. '''
+'''import math
+print(math.sin(10))
+print(math.cos(10))
+print(math.tan(10))
+print(math.floor(2.5))'''
+
+'''from math import sin,cos,tan,floor,ceil #내가 쓰고 싶은 것만 쓰겠다.
+print(sin(10))
+print(cos(10))
+print(tan(10))
+print(floor(2.5))'''
+
+#import math as map #임포트 이름을 바꿔줌 간단하게 쓰려고
+#from math import * #명령어를 모두 다 가져오겠다 겹치는거 다 무시하고 다 가져와라
+#넘파이같은 경우에는 from numpy import *를해준다.
+
+'''import random
+print("랜덤 수 생성 : ",random.random()) #랜덤 수 생성
+#0~1 소수
+print("랜덤 수 생성 :", random.uniform(10,20))
+print("랜덤 수 생성 :", random.randrange(20,30)) #인트 값을 낸다.
+print("랜덤 수 생성 : ", random.choice([1,2,3,4,5]))
+print("랜덤 수 생성 : ", random.shuffle([1,2,3,4,5]))
+print("랜덤 수 생성 : ", random.sample([1,2,3,4,5],k=4)) #몇개를 뽑아내겠다? '''
+
+'''import sys
+print(sys.argv) #추가로 입력되는 어떠한 값
+print(sys.version) #추가로 입력되는 어떠한 값
+sys.exit()'''
+
+'''import os #윈도우 명령어
+print("운영체제",os.name) #이름?
+print("위치",os.getcwd()) #윈도우 내에 위치
+print("폴더 내부의 파일 구조",os.listdir())
+os.mkdir("hello") #새로운 폴더 이 위치에 만들기
+os.rmdir("hello") #폴더 만든거 삭제하기'''
+'''import os
+with open("original.txt", "w") as file:
+    file.write("hello")
+#os.rename("original.txt", "new.txt") #파일에 이름을 바꾼다.
+os.remove("new.txt") #파일은 remove를 쓴다 폴더는 rmdir을 쓴다.'''
+
+'''import datetime
+new = datetime.datetime.now()
+print(new.year, "s")'''
+
+'''import time
+time.sleep(10) #시스템이 10초동안 멈춘다.'''
+
+from urllib import request
+target = request.urlopen("http://google.com")
+output = target.read()
+print(output)
+
+
+
+
 
 
 
